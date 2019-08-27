@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <array name="home_bar_labels">
+        <item>数字渤大</item>
+        <item>执行测评</item>
+        <item>综合教务系统</item>
+        <item>公交时刻</item>
+        <item>校历</item>
+        <item>在校证明</item>
+        <item>空教室查询</item>
+        <item>后勤报修</item>
+        <item>图书查询</item>
+        <item>网费（滨海）</item>
+        <item>网费（松山）</item>
+        <item>自助缴费</item>
+        <item>网上图书</item>
+        <item>渤海说吧</item>
+        <item>高考录取通知书</item>
+        <item>更多</item>
+    </array>
+
+    <array name="home_bar_icon">
+        <item>@mipmap/g1</item>
+        <item>@mipmap/g2</item>
+        <item>@mipmap/g3</item>
+        <item>@mipmap/g4</item>
+        <item>@mipmap/g5</item>
+        <item>@mipmap/g6</item>
+        <item>@mipmap/g7</item>
+        <item>@mipmap/g8</item>
+        <item>@mipmap/r1</item>
+        <item>@mipmap/r2</item>
+        <item>@mipmap/r3</item>
+        <item>@mipmap/r4</item>
+        <item>@mipmap/r5</item>
+        <item>@mipmap/r6</item>
+        <item>@mipmap/r7</item>
+        <item>@mipmap/r8</item>
+    </array>
+
+    <array name="sex">
+        <item>男</item>
+        <item>女</item>
+    </array>
+</resources>

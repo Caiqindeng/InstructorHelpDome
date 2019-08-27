@@ -1,0 +1,79 @@
+<resources>
+    <string name="app_name">辅导员助手</string>
+    <string name="s_says">渤海大学校园小助手</string>
+    <string name="login">登录</string>
+    <string name="enter_title_activity_register">立即注册</string>
+    <string name="title_activity_register">注册</string>
+    <string name="remember_password">记住密码</string>
+    <string name="retrieve_password">找回密码</string>
+    <string name="enter_id">请输入您的学号</string>
+    <string name="enter_mima">请输入您的密码</string>
+    <string name="enter_login">已有账号，直接登录</string>
+    <string name="cancel_fail">注销失败</string>
+    <string name="account_empty">账号为空</string>
+    <string name="pwd_empty">密码为空</string>
+    <string name="cancel_success">注销成功</string>
+    <string name="login_success">登录成功</string>
+    <string name="login_fail">登录失败</string>
+    <string name="name_already_exist">用户名已经存在</string>
+    <string name="pwd_not_the_same">两次密码输入不一样</string>
+    <string name="register_fail">注册失败</string>
+    <string name="register_success">注册成功</string>
+    <string name="pwd_check_empty">密码检测为空</string>
+    <string name="resetpwd_fail">密码修改失败</string>
+    <string name="resetpwd_success">密码修改成功</string>
+    <string name="pwd_not_fit_user">用户名和密码不匹配，重新输入</string>
+    <string name="name_not_exist">用户名不存在</string>
+    <string name="pwd_new_empty">新密码为空</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="shuru">请写出你的请假理由！！！</string>
+    <string name="desc">图片描述</string>
+    <string name="t_home">首页</string>
+    <string name="t_serive">服务</string>
+    <string name="t_chat">通知</string>
+    <string name="t_person">我</string>
+
+    <string name="p_name">昵称：</string>
+    <string name="p_id">学号：</string>
+    <string name="quit">退出登陆</string>
+    <string name="pt1">个人资料</string>
+    <string name="pt2">我的申请</string>
+    <string name="pt3">消息通知</string>
+    <string name="pt4">问题与反馈</string>
+    <string name="pt5">分享应用</string>
+    <string name="pt6">关于我们</string>
+    <string name="setting">设置</string>
+
+    <string name="h_t1">-渤大服务-</string>
+    <string name="t1">校园卡谁的</string>
+    <string name="con1">捡到一张校园卡，速度过来领</string>
+    <string name="h_t2">-日常事务申请-</string>
+    <string name="add_xinxi">添加失物招领</string>
+    <string name="title">标题</string>
+    <string name="telephone">手机号码</string>
+    <string name="content">描述</string>
+
+    <string name="xggrzx">修改个人信息</string>
+    <string name="email">邮箱：</string>
+    <string name="email_hao">2332446920@qq.com</string>
+    <string name="tele">电话:</string>
+    <string name="tele_id">16642712339</string>
+    <string name="says">介绍下自己吧</string>
+    <string name="geqian">个性签名:</string>
+    <string name="xgimages">修改头像</string>
+    <string name="nicheng">昵称:</string>
+    <string name="sex">性别:</string>
+    <string name="id">账号：</string>
+    <string name="collage">学院:</string>
+    <string name="major">专业：</string>
+    <string name="suse">宿舍:</string>
+    <string name="submit">提交</string>
+
+    <string name="pict">从相册</string>
+    <string name="pizhao">拍照</string>
+
+    <string name="action_QR">二维码</string>
+    <string name="add_friend">添加朋友</string>
+    <string name="action_settings">设置</string>
+</resources>

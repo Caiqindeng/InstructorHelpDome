@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:title="@string/app_name"
+        app:navigationIcon="@mipmap/ic_menu"
+        app:titleTextColor="#fff"
+        >
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <FrameLayout
+        android:id="@+id/ly_content"
+        android:layout_width="match_parent"
+        android:layout_height="623dp"
+        android:layout_above="@+id/rg_tab_bar"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="55dp">
+    </FrameLayout>
+
+    <RadioGroup
+        android:id="@+id/rg_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="55dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/white"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_Home"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_infromation"
+            android:text="@string/t_home"/>
+
+        <RadioButton
+            android:id="@+id/rb_Service"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_health"
+            android:text="@string/t_serive"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_Chat"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_chat"
+            android:text="@string/t_chat"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_Preson"
+            style="@style/tab_menu_item"
+            android:drawableTop="@drawable/tab_menu_home"
+            android:text="@string/t_person"/>
+
+    </RadioGroup>
+
+    <View
+        android:id="@+id/div_tab_bar"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_above="@id/rg_tab_bar"
+        android:background="@color/white"/>
+</RelativeLayout>
