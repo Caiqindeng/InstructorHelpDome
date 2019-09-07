@@ -4,9 +4,12 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -29,6 +32,7 @@ import cn.bmob.v3.BmobUser;
 import cn.bmob.v3.exception.BmobException;
 import cn.bmob.v3.listener.FetchUserInfoListener;
 import cn.bmob.v3.listener.FindListener;
+import cn.sharesdk.onekeyshare.OnekeyShare;
 
 
 public class PresonFragment extends Fragment implements View.OnClickListener {
@@ -37,6 +41,10 @@ public class PresonFragment extends Fragment implements View.OnClickListener {
     private TextView t_number;
     private Button btn_quit;
     private LinearLayout preson_data;
+    private LinearLayout me_share;
+    private LinearLayout feedback;
+    private LinearLayout about;
+    private LinearLayout notification;
     Handler  mTimeHandler;
 
     private  String imageUrl;
@@ -101,6 +109,18 @@ public class PresonFragment extends Fragment implements View.OnClickListener {
         
         preson_data=(LinearLayout)view.findViewById(R.id.preson_data);
         preson_data.setOnClickListener(this);
+
+        me_share=(LinearLayout)view.findViewById(R.id.me_share);
+        me_share.setOnClickListener(this);
+
+        feedback=(LinearLayout)view.findViewById(R.id.feedback);
+        feedback.setOnClickListener(this);
+
+        about=(LinearLayout)view.findViewById(R.id.about);
+        about.setOnClickListener(this);
+
+        notification=(LinearLayout)view.findViewById(R.id.notification);
+        notification.setOnClickListener(this);
 
         img=(ImageView)view.findViewById(R.id.images_head);
 
@@ -198,7 +218,63 @@ public class PresonFragment extends Fragment implements View.OnClickListener {
             case R.id.preson_data:
                 startActivity(new Intent(getActivity(),Edit_presonActivity.class));
                 break;
+
+            case R.id.me_share:
+                showShare();
+                break;
+            case R.id.feedback:
+                startActivity(new Intent(getActivity(), FeedbackActivity.class));
+                break;
+            case R.id.about:
+                startActivity(new Intent(getActivity(), versionCodeActivity.class));
+                break;
+            case R.id.notification:
+                TonotificationSetting();
+                break;
         }
         
+    }
+
+    private void TonotificationSetting() {
+        Intent intent = new Intent();
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("android.provider.extra.APP_PACKAGE", getActivity().getPackageName());
+
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {  //5.0
+            intent.setAction("android.settings.APP_NOTIFICATION_SETTINGS");
+            intent.putExtra("app_package", getActivity().getPackageName());
+            intent.putExtra("app_uid", getActivity().getApplicationInfo().uid);
+            startActivity(intent);
+
+        } else if (Build.VERSION.SDK_INT == Build.VERSION_CODES.KITKAT) {  //4.4
+            intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+            intent.addCategory(Intent.CATEGORY_DEFAULT);
+            intent.setData(Uri.parse("package:" + getActivity().getPackageName()));
+
+        } else if (Build.VERSION.SDK_INT >= 15) {
+            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            intent.setAction("android.settings.APPLICATION_DETAILS_SETTINGS");
+            intent.setData(Uri.fromParts("package", getActivity().getPackageName(), null));
+        }
+        startActivity(intent);
+    }
+
+
+    //java
+    private void showShare() {
+        OnekeyShare oks = new OnekeyShare();
+        // title标题，微信、QQ和QQ空间等平台使用
+        oks.setTitle(getString(R.string.share));
+        // titleUrl QQ和QQ空间跳转链接
+        oks.setTitleUrl("https://github.com/joun233/InstructorHelpDome");
+        // text是分享文本，所有平台都需要这个字段
+        oks.setText(getString(R.string.share_string));
+
+        oks.setImageUrl("https://github.com/joun233/InstructorHelpDome/blob/master/images/logo.jpg");
+        // url在微信、Facebook等平台中使用
+        oks.setUrl("https://github.com/joun233/InstructorHelpDome");
+        // 启动分享GUI
+        oks.show(getActivity());
     }
 }

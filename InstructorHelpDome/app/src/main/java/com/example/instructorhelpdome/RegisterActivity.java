@@ -67,7 +67,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 Toast.makeText(this, getString(R.string.pwd_not_the_same), Toast.LENGTH_SHORT).show();
                 return;
             } else {
-
                 MyUser myUser = new MyUser();
                 myUser.setUsername(userName);
                 myUser.setPassword(userPwd);
@@ -86,8 +85,6 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                         }
                     }
                 });
-
-
             }
         }
 

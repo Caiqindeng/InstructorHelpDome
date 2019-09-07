@@ -22,7 +22,7 @@ public class ServiceFragment extends Fragment {
 
 
     String url1 = "https://qq.campusplus.com/bhu/synnews/list/bhu_news";
-    String url2 = "http://h5.cyol.com/special/daxuexi/daxuexiall/m.php?t=1";
+    String url2 = "http://www.bhu.edu.cn/fpage/pgeneral/index.asp";
 
     private  Toolbar ToolBarServer;
     public ServiceFragment() {
@@ -41,15 +41,15 @@ public class ServiceFragment extends Fragment {
 
         Fragment webfragment1=new webFragment();
         ((webFragment) webfragment1).setUrl(url1);
-
         Fragment webfragment2=new webFragment();
         ((webFragment) webfragment2).setUrl(url2);
+
 
         List<Fragment> fragments = new ArrayList<>();
         fragments.add(new LostFoodFragment());
         fragments.add(webfragment2);
         fragments.add(webfragment1);
-        TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getFragmentManager(), fragments, new String[]{"失物招领", "大学习", "渤大新闻"});
+        TitleFragmentPagerAdapter adapter = new TitleFragmentPagerAdapter(getFragmentManager(), fragments, new String[]{"失物招领", "二手商品", "渤大新闻"});
         viewpager.setAdapter(adapter);
         tabLayout.setupWithViewPager(viewpager);
         return view;

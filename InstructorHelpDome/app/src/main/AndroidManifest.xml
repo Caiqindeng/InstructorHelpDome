@@ -1,25 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          xmlns:tools="http://schemas.android.com/tools"
-          package="com.example.instructorhelpdome">
-    <!-- 写sd卡的权限 -->
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/> <!-- 读sd卡权限 -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
-    <uses-permission android:name="android.permission.READ_CONTACTS"/>
-    <uses-permission android:name="android.permission.RECEIVE_SMS"/>
-    <uses-permission android:name="android.permission.READ_SMS"/>
-    <uses-permission android:name="android.permission.GET_TASKS"/>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"/>
-    <uses-permission
-        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
-        tools:ignore="ProtectedPermissions"/>
-    <uses-permission android:name="android.permission.INTERNET"/> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/> <!-- 获取wifi网络状态的信息 -->
-    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/> <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
-    <uses-permission android:name="android.permission.WAKE_LOCK"/> <!-- 允许读取手机状态 用于创建BmobInstallation -->
-    <uses-permission android:name="android.permission.READ_PHONE_STATE"/> <!-- 推送所需的权限 -->
-    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT"/>
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.instructorhelpdome">
 
     <application
         android:name=".App"
@@ -32,79 +14,90 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true"
         tools:ignore="GoogleAppIndexingWarning"
-        tools:replace="android:appComponentFactory"
-        >
+        tools:replace="android:appComponentFactory">
+        <activity android:name=".FoodPhoneActivity"></activity>
+        <activity android:name=".SuggestionActivity" />
+        <activity android:name=".ReleaseActivity" />
+        <activity android:name=".versionCodeActivity" />
+        <activity android:name=".FeedbackActivity" />
         <activity
             android:name=".SelectphotoActivity"
-            android:theme="@style/DialogStyleBottom">
-        </activity>
-        <activity android:name=".Lost_fondActivity">
-        </activity>
-        <activity android:name=".WebviewActivity">
-        </activity>
-        <activity android:name=".Edit_presonActivity">
-        </activity>
-        <activity android:name=".RegisterActivity">
-        </activity>
-        <activity android:name=".LoginActivity">
-        </activity>
+            android:theme="@style/DialogStyleBottom" />
+        <activity android:name=".Lost_fondActivity" />
+        <activity android:name=".WebviewActivity" />
+        <activity android:name=".Edit_presonActivity" />
+        <activity android:name=".RegisterActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".SplashActivity">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
+                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER"/>
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-        </activity>
+        <activity android:name=".MainActivity" />
 
         <provider
             android:name="cn.bmob.v3.util.BmobContentProvider"
-            android:authorities="com.example.instructorhelpdome.BmobContentProvider">
-        </provider> <!-- TODO 集成：1.2、添加推送所需要的服务和广播 -->
-        <service
-            android:name="cn.bmob.push.lib.service.PushService"
-            android:exported="true"
-            android:label="PushService"
-            android:process=":bmobpush">
-            <intent-filter>
-                <action android:name="cn.bmob.push.lib.service.PushService"/>
-            </intent-filter>
-        </service> <!-- 用于进程保活 -->
-        <service
-            android:name="cn.bmob.push.lib.service.PushNotifyService"
-            android:process=":bmobpush">
-        </service>
-
+            android:authorities="com.example.instructorhelpdome.BmobContentProvider" /> <!-- TODO 集成：1.2、添加推送所需要的服务和广播 -->
         <receiver android:name="cn.bmob.push.PushReceiver">
             <intent-filter>
 
                 <!-- 系统启动完成后会调用 -->
-                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <!-- 解锁完成后会调用 -->
-                <action android:name="android.intent.action.USER_PRESENT"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
                 <!-- 监听网络连通性 -->
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"/>
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
             </intent-filter>
-        </receiver> <!-- 第3步中创建的消息接收器，在这里进行注册 -->
+        </receiver> <!-- 用于进程保活 -->
         <receiver android:name=".receiver.PushMessageReceiver">
             <intent-filter>
-                <action android:name="cn.bmob.push.action.MESSAGE"/>
+                <action android:name="cn.bmob.push.action.MESSAGE" />
             </intent-filter>
-        </receiver> <!-- 接收心跳和唤醒的广播，要和PushService运行在同个进程 -->
+        </receiver>
         <receiver
             android:name="cn.bmob.push.PushNotifyReceiver"
             android:process=":bmobpush">
             <intent-filter>
 
                 <!-- 接收心跳广播的action -->
-                <action android:name="cn.bmob.push.action.HEARTBEAT"/>
+                <action android:name="cn.bmob.push.action.HEARTBEAT" />
                 <!-- 接收唤醒广播的action -->
-                <action android:name="cn.bmob.push.action.NOTIFY"/>
+                <action android:name="cn.bmob.push.action.NOTIFY" />
             </intent-filter>
-        </receiver>
-
-
+        </receiver> <!-- 第3步中创建的消息接收器，在这里进行注册 -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushService"
+            android:exported="true"
+            android:label="PushService"
+            android:process=":bmobpush">
+            <intent-filter>
+                <action android:name="cn.bmob.push.lib.service.PushService" />
+            </intent-filter>
+        </service> <!-- 接收心跳和唤醒的广播，要和PushService运行在同个进程 -->
+        <service
+            android:name="cn.bmob.push.lib.service.PushNotifyService"
+            android:process=":bmobpush" />
     </application>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" /> <!-- 获取GSM（2g）、WCDMA（联通3g）等网络状态的信息 -->
+    <uses-permission android:name="android.permission.RECEIVE_SMS" /> <!-- 获取wifi网络状态的信息 -->
+    <uses-permission android:name="android.permission.READ_SMS" /> <!-- 保持CPU 运转，屏幕和键盘灯有可能是关闭的,用于文件上传和下载 -->
+    <uses-permission android:name="android.permission.GET_TASKS" /> <!-- 允许读取手机状态 用于创建BmobInstallation -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 推送所需的权限 -->
+    <uses-permission
+        android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS"
+        tools:ignore="ProtectedPermissions" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
 
 </manifest>

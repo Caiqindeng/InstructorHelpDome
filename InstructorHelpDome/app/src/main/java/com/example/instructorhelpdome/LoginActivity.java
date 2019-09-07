@@ -30,7 +30,10 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_login);
         Bmob.initialize(this,"258d981ccdece06fee031bcc3ee685f3","Bomb");
         initView();
+
     }
+
+
 
     private void initView() {
         //通过id找到相应的控件
@@ -74,7 +77,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
     private void login() {
         final String uName=mAccount.getText().toString();
         final String uPwd=mPwd.getText().toString();
-
         MyUser myUser=new MyUser();
         myUser.setUsername(uName);
         myUser.setPassword(uPwd);
@@ -87,7 +89,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     //保存用户名和密码
                     editor.putString("USER_NAME", uName);
                     editor.putString("PASSWORD", uPwd);
-
                     //是否记住密码
                     if(mRememberCheck.isChecked()){
                         editor.putBoolean("mRememberCheck", true);
@@ -95,7 +96,6 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         editor.putBoolean("mRememberCheck", false);
                     }
                     editor.commit();
-
                     Toast.makeText(LoginActivity.this, getString(R.string.login_success),Toast.LENGTH_SHORT).show();//登录成功提示
                     Intent intent = new Intent(LoginActivity.this,MainActivity.class) ;    //切换Login Activity至Main Activity
                     startActivity(intent);

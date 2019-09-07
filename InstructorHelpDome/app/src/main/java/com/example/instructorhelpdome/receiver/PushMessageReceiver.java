@@ -23,19 +23,14 @@ import cn.bmob.v3.util.BmobNotificationManager;
 
 //TODO 集成：1.3、创建自定义的推送消息接收器，并在清单文件中注册
 public class PushMessageReceiver extends BroadcastReceiver {
-
     @Override
     public void onReceive(Context context, Intent intent) {
-
         String msg = intent.getStringExtra("msg");
         if (intent.getAction().equals(PushConstants.ACTION_MESSAGE)) {
             Toast.makeText(context, msg, Toast.LENGTH_SHORT).show();
             Logger.i("客户端收到推送消息：" + msg);
-
-
             Gson gson = new Gson();
             PushInfo pushInfo = gson.fromJson(msg, PushInfo.class);
-
             String alert = pushInfo.getAlert();
             String articleurl = pushInfo.getArticleurl();
             String articleUrl =articleurl.replaceAll("http://bmob-cdn-25347.b0.upaiyun.com","http://jn.philuo.com");
@@ -44,12 +39,9 @@ public class PushMessageReceiver extends BroadcastReceiver {
             B.putString("name",alert);
             B.putString("url",articleUrl);
             pendingIntent.putExtra("data",B);
-
             pendingIntent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
             Bitmap largeIcon = BitmapFactory.decodeResource(context.getResources(), R.mipmap.logo);
             BmobNotificationManager.getInstance(context).showNotification(largeIcon, "校内通知", alert, articleurl, pendingIntent, NotificationManager.IMPORTANCE_MIN, NotificationCompat.FLAG_ONLY_ALERT_ONCE);
-
         }
-
     }
 }

@@ -69,7 +69,6 @@
             style="@style/tv_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentStart="true"
             android:text="@string/h_t2"
             android:textAlignment="center"
             android:textSize="18sp"/>
@@ -88,7 +87,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/Add_notice"
+                    android:id="@+id/Add_Release"
                     style="@style/single_layout"
                     android:orientation="vertical">
 
@@ -104,9 +103,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="发布消息"
+                        android:text="发布二手"
                         android:textAlignment="center"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
@@ -146,7 +145,7 @@
                 android:orientation="vertical">
 
                 <LinearLayout
-                    android:id="@+id/apply_vacation"
+                    android:id="@+id/food_phone"
                     style="@style/single_layout"
                     android:orientation="vertical">
 
@@ -161,36 +160,39 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="请假申请"
+                        android:text="外卖电话"
                         android:textAlignment="center"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
                 style="@style/wrap_layout1"
-                android:id="@+id/apply_activity"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_weight="0.22"
                 android:orientation="vertical">
-                <LinearLayout style="@style/single_layout"
-                              android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/Suggestion"
+                    style="@style/single_layout"
+                    android:orientation="vertical">
+
                     <ImageView
                         android:id="@+id/imageView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        custom:srcCompat="@mipmap/k12"/>
+                        app:srcCompat="@mipmap/k7" />
 
                     <TextView
                         android:id="@+id/textView4"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="活动申请"
+                        android:text="校园建言"
                         android:textAlignment="center"
-                        android:textStyle="bold"/>
+                        android:textStyle="bold" />
                 </LinearLayout>
             </LinearLayout>
 

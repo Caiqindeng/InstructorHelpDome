@@ -28,8 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
-            android:text="@string/xggrzx"
-            android:textSize="19sp"/>
+            android:text="用户信息"
+            android:textSize="19sp" />
 
     </RelativeLayout>
 
@@ -55,10 +55,9 @@
                 android:id="@+id/head_icon"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:layout_marginLeft="140dp"
+                android:layout_marginLeft="150dp"
                 android:layout_marginTop="12dp"
-                android:scaleType="fitCenter"
-                />
+                android:scaleType="fitCenter" />
 
             <Button
                 android:id="@+id/button_changeimg"

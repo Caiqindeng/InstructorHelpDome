@@ -43,5 +43,7 @@ public class App extends Application {
          * 启动推送服务
          */
         BmobPush.startWork(this);
+
     }
+
 }

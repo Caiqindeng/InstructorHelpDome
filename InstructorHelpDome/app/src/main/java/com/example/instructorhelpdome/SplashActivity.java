@@ -17,6 +17,7 @@ public class SplashActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         Bmob.initialize(this,"258d981ccdece06fee031bcc3ee685f3","Bomb");
+        // 初始化参数依次为 this，App Id，App Key
 
         mHandler.postDelayed(new Runnable() {
             @Override
@@ -32,9 +33,9 @@ public class SplashActivity extends AppCompatActivity {
                 }
                 startActivity(intent);
                 finish();
-
             }
         }, 3000);
     }
+
 
 }

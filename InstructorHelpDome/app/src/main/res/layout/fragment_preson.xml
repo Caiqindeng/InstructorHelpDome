@@ -137,6 +137,7 @@
         <!-- 无圆角-->
 
         <LinearLayout
+            android:id="@+id/notification"
             style="@style/mid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -145,16 +146,15 @@
                 android:id="@+id/imageView7"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@android:drawable/ic_dialog_email"
-               />
+                android:src="@android:drawable/ic_dialog_email" />
 
             <TextView
                 style="@style/usertext"
-                android:text="@string/pt3"/>
+                android:text="@string/pt3" />
 
             <ImageView
                 style="@style/img_arrow"
-                android:contentDescription="@string/desc"/>
+                android:contentDescription="@string/desc" />
         </LinearLayout>
 
         <View
@@ -163,6 +163,7 @@
             android:layout_height="1dp"/>
 
         <LinearLayout
+            android:id="@+id/feedback"
             style="@style/mid_layout"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -171,16 +172,16 @@
                 android:id="@+id/imageView8"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@android:drawable/ic_dialog_info"
-            />
+                android:src="@android:drawable/ic_dialog_info" />
 
             <TextView
                 style="@style/usertext"
-                android:text="@string/pt4"/>
+                android:text="@string/pt4" />
 
             <ImageView
                 style="@style/img_arrow"
-                android:contentDescription="@string/desc"/>
+                android:contentDescription="@string/desc" />
+
         </LinearLayout>
 
         <View
@@ -189,21 +190,23 @@
             android:layout_width="match_parent"
             android:layout_height="1dp"/>
 
-        <LinearLayout style="@style/mid_layout">
+        <LinearLayout
+            android:id="@+id/me_share"
+            style="@style/mid_layout">
 
             <ImageView
                 android:id="@+id/imageView9"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@android:drawable/ic_menu_share"
-                />
+                android:src="@android:drawable/ic_menu_share" />
 
             <TextView
                 style="@style/usertext"
-                android:text="@string/pt5"/>
+                android:text="@string/pt5" />
 
-            <ImageView style="@style/img_arrow"
-                       android:contentDescription="@string/desc"/>
+            <ImageView
+                style="@style/img_arrow"
+                android:contentDescription="@string/desc" />
         </LinearLayout>
         <!-- 分割线 -->
         <!-- 无圆角-->
@@ -212,22 +215,23 @@
             style="@style/bg_line"
             android:layout_height="1dp"/>
         <!-- 下圆角-->
-        <LinearLayout style="@style/bottom_layout">
+        <LinearLayout
+            android:id="@+id/about"
+            style="@style/bottom_layout">
 
             <ImageView
                 android:id="@+id/imageView10"
                 android:layout_width="40dp"
                 android:layout_height="match_parent"
-                android:src="@android:drawable/ic_menu_my_calendar"
-               />
+                android:src="@android:drawable/ic_menu_my_calendar" />
 
             <TextView
                 style="@style/usertext"
-                android:text="@string/pt6"/>
+                android:text="@string/pt6" />
 
             <ImageView
                 style="@style/img_arrow"
-                android:contentDescription="@string/desc"/>
+                android:contentDescription="@string/desc" />
         </LinearLayout>
 
     </LinearLayout>

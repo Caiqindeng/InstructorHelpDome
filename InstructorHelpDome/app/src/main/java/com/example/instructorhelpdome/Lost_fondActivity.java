@@ -141,7 +141,6 @@ public class Lost_fondActivity extends AppCompatActivity implements View.OnClick
             public void done(String s, BmobException e) {
                 if (e == null) {
                     showToast("招领信息发布成功");
-
                     //成功后提示主界面刷新数据
                     Intent intent = new Intent();
                     setResult(RESULT_OK, intent);

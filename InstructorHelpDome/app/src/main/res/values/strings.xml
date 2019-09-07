@@ -76,4 +76,14 @@
     <string name="action_QR">二维码</string>
     <string name="add_friend">添加朋友</string>
     <string name="action_settings">设置</string>
+
+    <string name="share">我的分享</string>
+    <string name="share_string">大学是中国社会信息化、网络化的发展前沿，辅导员怎样顺应时代，利用好互联网平台开展学生日常管理工作尤为重要。充分利用互联网管理模式，将辅导员从繁杂工作中解放，成为学生思想、行为的人生导师，构建“互联网＋管理”具象化的高校辅导员日常管理新模式，合理运用运用互联网为高校辅导员提供更便捷的服务。主要功能涉及大学生的日常管理、如请销假、宿舍管理、学习状况查看、活动申报、应急消息处理等多种功能，通过学生端和教师端互动达到师生的共同进步，项目成果初步完成，并创新致力于在学生管理，准确定位，教学办公一体化等方面为辅导员提供方便快捷的服务。</string>
+
+    <string name="appraise">评价我们</string>
+    <string name="Privacy">《辅导员助手隐私政策》</string>
+    <string name="Agreement">《辅导员助手使用协议》</string>
+    <string name="version">版本号：</string>
+
+
 </resources>

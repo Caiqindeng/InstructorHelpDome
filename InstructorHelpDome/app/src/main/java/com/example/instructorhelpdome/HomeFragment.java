@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.GridView;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.daimajia.slider.library.Animations.DescriptionAnimation;
@@ -33,7 +34,9 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     private List<View> mViews = new ArrayList<>();
     private List<HomeIconInfo> mPagerOneData = new ArrayList<>();
     private List<HomeIconInfo> mPagerTwoData = new ArrayList<>();
-
+    private LinearLayout Add_Release;
+    private LinearLayout Suggestion;
+    private LinearLayout food_phone;
     public HomeFragment() {
         // Required empty public constructor
     }
@@ -58,6 +61,12 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
     }
 
     private void initView(View view) {
+        Add_Release =(LinearLayout)view.findViewById(R.id.Add_Release);
+        Add_Release.setOnClickListener(this);
+        Suggestion =(LinearLayout)view.findViewById(R.id.Suggestion);
+        Suggestion.setOnClickListener(this);
+        food_phone =(LinearLayout)view.findViewById(R.id.food_phone);
+        food_phone.setOnClickListener(this);
     }
 
     /**
@@ -143,7 +152,6 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         GridView gridView01 = (GridView) pagerOne.findViewById(R.id.gridView);
         gridView01.setAdapter(new MyGridAdapter(mPagerOneData, this.getActivity()));
         gridView01.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 if(i==0&&(int)l==0) {
@@ -249,7 +257,7 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
                     Intent intent=new Intent(getActivity(),WebviewActivity.class);
                     Bundle B=new Bundle();
                     B.putString("name","自助缴费");
-                    B.putString("url","http://jf.bhu.edu.cn/zzjf/index/index_index.html");
+                    B.putString("url","http://210.47.178.67/login.aspx");
                     intent.putExtra("data",B);
                     startActivity(intent);
 
@@ -291,12 +299,23 @@ public class HomeFragment extends Fragment implements View.OnClickListener {
         mViews.add(pagerTwo);
         viewPager.setAdapter(new MyPagerAdapter(mViews));
 
-
     }
 
 
     @Override
     public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.Add_Release:
+                startActivity(new Intent(getActivity(), ReleaseActivity.class));
+                break;
+            case R.id.Suggestion:
+                startActivity(new Intent(getActivity(),SuggestionActivity.class));
+                break;
+            case R.id.food_phone:
+                startActivity(new Intent(getActivity(),FoodPhoneActivity.class));
+                break;
+
+        }
 
     }
 }

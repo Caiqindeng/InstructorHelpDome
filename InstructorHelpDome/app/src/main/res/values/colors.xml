@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorPrimary">#2f86db</color>
-    <color name="colorPrimaryDark">#479eef</color>
-    <color name="colorAccent">#40efff</color>
+    <color name="colorPrimaryDark">#479EEF</color>
+    <color name="colorAccent">#40EFFF</color>
     <color name="white">#ffffff</color>
-    <color name="bg_white">#ffffff</color>
+    <color name="bg_white">#FFFFFF</color>
     <color name="transparent">#f1f2fa</color>
     <color name="text_gray">#797979</color>
     <color name="text_bule">#0093ce</color>
-    <color name="bg_gray">#f6f6f6</color>
+    <color name="bg_gray">#F6F6F6</color>
     <!-- 描边颜色 -->
     <color name="border_clo">#ccc</color>
     <color name="text_clo">#333</color>
-    <color name="blue">#419de4</color>
-    <color name="sblue">#c74dadf7</color>
-    <color name="darker_gray">#efeeee</color>
+    <color name="blue">#419DE4</color>
+    <color name="sblue">#C74DADF7</color>
+    <color name="darker_gray">#EFEEEE</color>
     <color name="darker_red">#cdff3a3a</color>
     <color name="bg_black">#000000</color>
     <color name="i8_login_black">#433a3a</color>
